@@ -11,7 +11,7 @@ SECOND_CHECKPOINT = datetime(2021, 1, 1, 0, 0)
 
 FIRST_VERSION = "1.0"
 
-TYPES = [Types.CONTENT, Types.BUGFIX, Types.PERFORMANCE, Types.QUALITY_OF_ENTITY]
+TYPES = [Types.CONTENT, Types.BUGFIX, Types.PERFORMANCE, Types.QUALITY_OF_LIFE]
 
 def add_to_version(version, type):
     version_splited = version.split(".")
@@ -57,7 +57,7 @@ def make_content_update(last_version, date):
 def save_to_file(updates, file_number):
     with open(path.join(path.dirname(__file__), f"updates{file_number}.csv"), "w") as file:
         for update in updates:
-            file.write(f"{update[0]},{file_number+2}.{update[1].value},{update[2]}\n")
+            file.write(f"{file_number+2}.{update[0]},{update[1].value},{update[2]}\n")
 
 
 def add_month(date):
